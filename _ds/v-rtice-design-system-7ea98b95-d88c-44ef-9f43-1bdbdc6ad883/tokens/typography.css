@@ -1,0 +1,48 @@
+/* ============================================================
+   VÉRTICE — Typography tokens
+   Headings: Neue Haas Grotesk Text Pro, tracking 500 (0.05em)
+   Tagline:  Inter Light, tracking 250 (0.025em), gold, uppercase
+   Body:     Inter Regular
+   Labels:   Inter Regular, uppercase, tracking 100–150
+   ============================================================ */
+
+:root {
+  /* ---- Families -------------------------------------------- */
+  --font-display: "Neue Haas Grotesk Text Pro", "Inter", system-ui, sans-serif;
+  --font-body:    "Inter", system-ui, -apple-system, sans-serif;
+
+  /* ---- Tracking (letter-spacing) --------------------------- */
+  --track-display: 0.05em;   /* 500  — brand name & headings    */
+  --track-tagline: 0.025em;  /* 250  — tagline                  */
+  --track-label:   0.14em;   /* 100–150 — uppercase labels      */
+  --track-body:    0;        /* @kind other */
+
+  /* ---- Weights --------------------------------------------- */
+  --weight-light:    300;
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  /* ---- Type scale (px) ------------------------------------- */
+  --text-display-xl: 72px;
+  --text-display-l:  56px;
+  --text-display-m:  40px;
+  --text-h1:         32px;
+  --text-h2:         26px;
+  --text-h3:         21px;
+  --text-lead:       18px;
+  --text-body:       16px;
+  --text-sm:         14px;
+  --text-caption:    13px;
+  --text-label:      11px;
+
+  /* ---- Line heights ---------------------------------------- */
+  --leading-tight:   1.08;
+  --leading-snug:    1.25;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.65;
+
+  /* ---- Composed roles -------------------------------------- */
+  --role-brand-name: var(--weight-medium) var(--text-h1)/var(--leading-tight) var(--font-display);
+}

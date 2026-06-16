@@ -1,0 +1,49 @@
+/* ============================================================
+   VÉRTICE — Spacing, radius, borders, shadows, motion
+   Generous spacing; 16px min padding, 24px preferred.
+   ============================================================ */
+
+:root {
+  /* ---- Spacing scale (4px base) ---------------------------- */
+  --space-0:   0;
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;   /* minimum padding */
+  --space-5:   24px;   /* preferred padding / gutter */
+  --space-6:   32px;
+  --space-7:   48px;
+  --space-8:   64px;
+  --space-9:   96px;
+  --space-10:  128px;
+
+  /* ---- Layout --------------------------------------------- */
+  --gutter:        24px;  /* 12-col web grid gutter */
+  --container-max: 1200px;
+  --container-pad: 32px;
+
+  /* ---- Radius (cards 4–8px) ------------------------------- */
+  --radius-xs:  2px;
+  --radius-sm:  4px;
+  --radius-md:  6px;
+  --radius-lg:  8px;
+  --radius-pill: 999px;
+
+  /* ---- Borders -------------------------------------------- */
+  --border-hairline-w: 0.5px;
+  --border-w:          1px;
+  --bar-w:             3px;   /* gold accent bar 2–4px */
+
+  /* ---- Shadows (subtle; dark-first) ----------------------- */
+  --shadow-sm:  0 1px 2px rgba(7,22,15,0.40);
+  --shadow-md:  0 6px 20px rgba(7,22,15,0.45);
+  --shadow-lg:  0 18px 50px rgba(7,22,15,0.55);
+  --shadow-gold-glow: 0 0 0 1px rgba(201,168,76,0.35), 0 8px 30px rgba(201,168,76,0.10);
+
+  /* ---- Motion --------------------------------------------- */
+  --ease-standard: cubic-bezier(0.4, 0.0, 0.2, 1); /* @kind other */
+  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);  /* @kind other */
+  --dur-fast:   140ms; /* @kind other */
+  --dur-base:   220ms; /* @kind other */
+  --dur-slow:   420ms; /* @kind other */
+}

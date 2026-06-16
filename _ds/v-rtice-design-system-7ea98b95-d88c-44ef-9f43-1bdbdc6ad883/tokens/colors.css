@@ -1,0 +1,83 @@
+/* ============================================================
+   VÉRTICE — Color tokens
+   Dark-first palette. Never pure #fff / #000.
+   ============================================================ */
+
+:root {
+  /* ---- Brand core ------------------------------------------ */
+  --vt-esmeralda:   #1B6B45; /* Esmeralda Vértice — primary brand */
+  --vt-selva:       #0D2E1F; /* Selva Profunda — dark base        */
+  --vt-dorado:      #C9A84C; /* Dorado Élite — gold accent        */
+  --vt-marfil:      #F5F2EB; /* Marfil Limpio — ivory             */
+
+  /* ---- Extended greens (surfaces & lines) ------------------ */
+  --vt-verde-card:  #0F3D23; /* card surface on dark              */
+  --vt-verde-row:   #122A1C; /* alt table row                    */
+  --vt-verde-deep:  #0A2417; /* deepest section / footer         */
+  --vt-line-green:  #1B3D2A; /* hairline border on dark          */
+  --vt-esmeralda-600:#155539;/* pressed / darker emerald         */
+  --vt-esmeralda-400:#2A8659;/* hover / lighter emerald          */
+
+  /* ---- Gold variants --------------------------------------- */
+  --vt-dorado-bright:#D9BC68; /* gold hover                      */
+  --vt-dorado-deep:  #A8893A; /* gold pressed                    */
+  --vt-dorado-soft:  rgba(201,168,76,0.16); /* gold tint fill    */
+
+  /* ---- Neutrals (grises) ----------------------------------- */
+  --vt-gris:        #8AABA0; /* secondary text on dark           */
+  --vt-gris-2:      #CCDED7; /* label text on dark               */
+  --vt-gris-deep:   #5E7A70; /* tertiary / disabled on dark      */
+  --vt-marfil-dim:  #DAD5C8; /* muted ivory                      */
+
+  /* ---- Light-surface neutrals ------------------------------ */
+  --vt-ink:         #0D2E1F; /* body text on light = Selva       */
+  --vt-ink-soft:    #3C5249; /* secondary text on light          */
+  --vt-line-light:  #E0DACB; /* hairline on ivory                */
+  --vt-surface-light:#FBFAF5;/* raised card on ivory             */
+
+  /* ---- State accents --------------------------------------- */
+  --vt-success:     #2A8659;
+  --vt-warning:     #C9A84C;
+  --vt-danger:      #B5523E;
+  --vt-info:        #5E8C9E;
+
+  /* ============================================================
+     Semantic aliases — prefer these in components
+     ============================================================ */
+  /* Backgrounds */
+  --bg-base:        var(--vt-selva);
+  --bg-deep:        var(--vt-verde-deep);
+  --bg-emerald:     var(--vt-esmeralda);
+  --bg-light:       var(--vt-marfil);
+
+  /* Surfaces */
+  --surface-card:       var(--vt-verde-card);
+  --surface-card-light: var(--vt-surface-light);
+  --surface-row-alt:    var(--vt-verde-row);
+
+  /* Text on dark */
+  --text-primary:   var(--vt-marfil);
+  --text-secondary: var(--vt-gris-2);
+  --text-muted:     var(--vt-gris);
+  --text-disabled:  var(--vt-gris-deep);
+  --text-accent:    var(--vt-dorado);
+
+  /* Text on light */
+  --text-on-light:        var(--vt-ink);
+  --text-on-light-soft:   var(--vt-ink-soft);
+
+  /* Lines & borders */
+  --border-hairline:   var(--vt-line-green);
+  --border-light:      var(--vt-line-light);
+  --border-accent:     var(--vt-dorado);
+  --border-emerald:    var(--vt-esmeralda);
+
+  /* Interactive */
+  --action-primary:        var(--vt-esmeralda);
+  --action-primary-hover:  var(--vt-esmeralda-400);
+  --action-primary-press:  var(--vt-esmeralda-600);
+  --action-accent:         var(--vt-dorado);
+  --action-accent-hover:   var(--vt-dorado-bright);
+  --action-accent-press:   var(--vt-dorado-deep);
+  --focus-ring:            var(--vt-dorado);
+}

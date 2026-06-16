@@ -1,0 +1,87 @@
+/* ============================================================
+   VÉRTICE — Base element styles & brand utility classes
+   ============================================================ */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-body);
+  line-height: var(--leading-normal);
+  color: var(--text-primary);
+  background: var(--bg-base);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---- Brand name -------------------------------------------- */
+.vt-brand {
+  font-family: var(--font-display);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--track-display);
+  text-transform: uppercase;
+}
+
+/* ---- Headings ---------------------------------------------- */
+.vt-display {
+  font-family: var(--font-display);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--track-display);
+  line-height: var(--leading-tight);
+  text-wrap: balance;
+}
+.vt-heading {
+  font-family: var(--font-display);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--track-display);
+  line-height: var(--leading-snug);
+}
+
+/* ---- Tagline (Inter Light, gold, uppercase) ---------------- */
+.vt-tagline {
+  font-family: var(--font-body);
+  font-weight: var(--weight-light);
+  letter-spacing: var(--track-tagline);
+  text-transform: uppercase;
+  color: var(--text-accent);
+}
+
+/* ---- Uppercase label / eyebrow ----------------------------- */
+.vt-label {
+  font-family: var(--font-body);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-label);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--text-accent);
+}
+
+/* ---- Body lead --------------------------------------------- */
+.vt-lead {
+  font-size: var(--text-lead);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+}
+
+/* ---- Gold accent bar --------------------------------------- */
+.vt-bar {
+  display: inline-block;
+  width: var(--bar-w);
+  height: 1.1em;
+  background: var(--vt-dorado);
+  vertical-align: -0.12em;
+}
+
+/* ---- Hairline divider -------------------------------------- */
+.vt-divider {
+  border: 0;
+  border-top: var(--border-hairline-w) solid var(--border-hairline);
+  margin: var(--space-5) 0;
+}
+.vt-divider--gold {
+  border-top-color: var(--vt-dorado);
+}
