@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Radar de Licitaciones · Vértice Collective</title>
+<style>
+  :root{--esm:#1B6B45;--dark:#0D2E1F;--gold:#C9A84C;--ivory:#F5F2EB;--ink:#1A1A1A;--grey:#6B6B6B;--line:#E5E0D5;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Segoe UI',Inter,system-ui,Arial,sans-serif;color:var(--ink);background:var(--ivory);}
+  header{background:var(--dark);color:#fff;padding:18px 26px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+  header .brand b{font-size:19px;letter-spacing:.14em;display:block;}
+  header .brand span{font-size:12px;color:#B9C7BC;}
+  header .meta{font-size:12px;color:#B9C7BC;text-align:right;}
+  .bar{background:#fff;border-bottom:1px solid var(--line);padding:13px 26px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+  .bar input,.bar select{padding:9px 11px;border:1px solid var(--line);border-radius:8px;font-size:14px;background:#fff;}
+  .bar input[type=text]{min-width:200px;flex:1;}
+  .btn{background:var(--esm);color:#fff;border:none;padding:9px 16px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;}
+  .btn:hover{background:#155238;}
+  .wrap{padding:20px 26px;max-width:1200px;margin:0 auto;}
+  .stats{display:flex;gap:12px;margin-bottom:14px;flex-wrap:wrap;}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 15px;min-width:120px;}
+  .stat b{display:block;font-size:21px;color:var(--esm);}
+  .stat span{font-size:12px;color:var(--grey);}
+  .legend{font-size:12px;color:var(--grey);margin:4px 0 14px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+  .card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin-bottom:11px;display:flex;gap:14px;align-items:flex-start;}
+  .fit{min-width:48px;text-align:center;}
+  .fit .score{font-size:22px;font-weight:800;line-height:1;}
+  .fit .lbl{font-size:9.5px;color:var(--grey);text-transform:uppercase;letter-spacing:.04em;}
+  .card.hi{border-left:4px solid var(--esm);} .card.hi .score{color:var(--esm);}
+  .card.mid{border-left:4px solid var(--gold);} .card.mid .score{color:#a9842a;}
+  .card.lo{border-left:4px solid #c9b8b5;} .card.lo .score{color:#b23a2e;}
+  .body{flex:1;}
+  .card h3{margin:0 0 5px;font-size:14.5px;line-height:1.35;}
+  .card .ent{font-size:12px;color:var(--grey);margin-bottom:8px;}
+  .tags{display:flex;gap:7px;flex-wrap:wrap;align-items:center;}
+  .tag{font-size:11px;padding:3px 9px;border-radius:20px;background:var(--ivory);color:var(--dark);border:1px solid var(--line);}
+  .tag.val{background:#eef6f0;color:var(--esm);font-weight:700;border-color:#cfe6d8;}
+  .tag.type{background:#1B6B45;color:#fff;border-color:#1B6B45;}
+  .tag.type.mixto{background:#3f6ea5;border-color:#3f6ea5;}
+  .tag.type.cat{background:#b08900;border-color:#b08900;}
+  .tag.city{background:#fbf6e8;color:#8a6d1f;border-color:#eadfbf;}
+  .tag.warn{background:#fdecea;color:#8a2b20;border-color:#f5c6c0;}
+  .tag.ok{background:#eef6f0;color:var(--esm);border-color:#cfe6d8;}
+  .card a.go{font-size:13px;color:var(--esm);text-decoration:none;font-weight:600;white-space:nowrap;align-self:center;}
+  .card a.go:hover{text-decoration:underline;}
+  .empty,.loading{padding:40px;text-align:center;color:var(--grey);}
+  .err{background:#fdecea;border:1px solid #f5c6c0;color:#8a2b20;padding:14px 16px;border-radius:10px;font-size:13.5px;}
+  footer{padding:16px 26px;text-align:center;font-size:11.5px;color:var(--grey);}
+  h2.sec{font-size:13px;color:var(--dark);margin:20px 0 9px;letter-spacing:.02em;text-transform:uppercase;}
+</style>
+</head>
+<body>
+<div id="gate" style="position:fixed;inset:0;background:#0D2E1F;display:flex;align-items:center;justify-content:center;z-index:9999;">
+  <div style="background:#fff;padding:30px 28px;border-radius:14px;width:300px;text-align:center;font-family:'Segoe UI',system-ui,Arial;box-shadow:0 10px 40px rgba(0,0,0,.3);">
+    <div style="font-size:16px;font-weight:800;letter-spacing:.12em;color:#1B6B45;margin-bottom:4px;">VÉRTICE COLLECTIVE</div>
+    <div style="font-size:12px;color:#6B6B6B;margin-bottom:16px;">Radar de licitaciones · acceso privado</div>
+    <input id="pw" type="password" placeholder="Contraseña" style="width:100%;padding:10px;border:1px solid #E5E0D5;border-radius:8px;font-size:14px;margin-bottom:10px;"/>
+    <button id="pwbtn" style="width:100%;background:#1B6B45;color:#fff;border:none;padding:10px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;">Entrar</button>
+    <div id="pwerr" style="color:#b23a2e;font-size:12px;margin-top:8px;height:14px;"></div>
+  </div>
+</div>
+<header>
+  <div class="brand"><b>VÉRTICE COLLECTIVE</b><span>Radar de licitaciones · filtrado por tu perfil</span></div>
+  <div class="meta" id="meta">Cargando…</div>
+</header>
+
+<div class="bar">
+  <input type="text" id="q" placeholder="Buscar palabra (streaming, feria, domo…)"/>
+  <select id="tipo">
+    <option value="apto">Solo lo apto para mí</option>
+    <option value="prod">Solo producción y AV</option>
+    <option value="todo">Ver todo (incluye catering)</option>
+  </select>
+  <select id="region">
+    <option value="all">Bogotá y Cundinamarca</option>
+    <option value="bog">Solo Bogotá</option>
+    <option value="cun">Solo Cundinamarca</option>
+  </select>
+  <select id="dias">
+    <option value="30">Últimos 30 días</option>
+    <option value="15">Últimos 15 días</option>
+    <option value="45">Últimos 45 días</option>
+  </select>
+  <button class="btn" id="refresh">Actualizar</button>
+</div>
+
+<div class="wrap">
+  <div class="stats" id="stats"></div>
+  <div class="legend">
+    <span>⬤ <b style="color:var(--esm)">Verde</b>: alto encaje (producción/AV, sin RUP)</span>
+    <span>⬤ <b style="color:#a9842a">Ámbar</b>: encaje medio (evento mixto)</span>
+    <span>⬤ <b style="color:#b23a2e">Rojo</b>: bajo encaje (catering/hospedaje o requiere RUP)</span>
+  </div>
+  <div id="results"><div class="loading">Consultando SECOP…</div></div>
+</div>
+
+<footer>
+  Datos: Colombia Compra Eficiente · SECOP II (datos abiertos, p6dx-8zbt). El puntaje de encaje es una guía automática según el perfil de Vértice (producción, audiovisual, streaming, eventos; sin RUP; cerca de Bogotá). Verifica siempre ficha técnica, forma de pago, requisitos y fecha de cierre en SECOP antes de decidir.
+</footer>
+
+<script>
+const API="https://www.datos.gov.co/resource/p6dx-8zbt.json";
+const AV=["streaming","transmisión","transmision","audiovisual","sonido","pantalla","led","tarima","montaje","domo","fulldome","360","cámara","camara","iluminación","iluminacion","escenario","proyección","proyeccion","video","amplificación","amplificacion","multicámara","multicamara"];
+const EV=["evento","congreso","seminario","foro","cumbre","convención","convencion","feria","lanzamiento","rueda de prensa","conmemora","celebraci","activación","activacion","logística integral","logistica integral","operador logístico","operador logistico","exposición","exposicion"];
+const FOOD=["refrigerio","almuerzo","cena","catering","banquete","alimentación","alimentacion","estación de café","estacion de cafe","raciones","ración","racion","invima","menaje"];
+const HOTEL=["hotel","hospedaje","alojamiento"];
+const PUB=["publicidad","campaña","campana","pauta publicitaria"];
+const EXC=["radio","emisora","frecuencia modulada","televis"," canal ","medicament","ferreter","semilla","papeler","vehícul","vehicul"," aseo","combustible","capacitaci","formación","formacion","docente","diplomado"," curso","peaje","dotaci","uniforme","póliza","poliza","consultoría","consultoria","interventoría","interventoria"];
+const fmt=n=>"$ "+(n||0).toLocaleString("es-CO");
+const has=(t,arr)=>arr.some(k=>t.includes(k));
+const cnt=(t,arr)=>arr.reduce((a,k)=>a+(t.includes(k)?1:0),0);
+function isoDaysAgo(d){const t=new Date();t.setDate(t.getDate()-d);return t.toISOString().slice(0,10);}
+
+function classify(r){
+  const txt=((r.nombre_del_procedimiento||"")+" "+(r.descripci_n_del_procedimiento||"")).toLowerCase();
+  const mod=(r.modalidad_de_contratacion||"").toLowerCase();
+  const minima=mod.includes("mínima cuantía")||mod.includes("minima cuantia");
+  const selAbrev=mod.includes("selección abreviada")||mod.includes("seleccion abreviada")||mod.includes("licitación")||mod.includes("licitacion");
+  const avc=cnt(txt,AV), evc=cnt(txt,EV), food=has(txt,FOOD), hotel=has(txt,HOTEL), pub=has(txt,PUB);
+  let type="Eventos", cls="type";
+  if(avc>=1 && !(food&&avc<evc)) {type="Producción / AV"; cls="type";}
+  else if(evc>=1 && avc>=1){type="Evento con AV"; cls="type";}
+  else if(evc>=1 && (food||hotel)){type="Evento (logística)"; cls="type mixto";}
+  else if(food && avc===0 && evc===0){type="Catering / alimentación"; cls="type cat";}
+  else if(pub){type="Publicidad"; cls="type";}
+  else if(evc>=1){type="Eventos"; cls="type mixto";}
+  let score=0;
+  if(minima) score+=3; else if(selAbrev) score-=3;
+  score += Math.min(avc,3)*2;
+  score += Math.min(evc,2);
+  if(food) score-=2;
+  if(hotel) score-=2;
+  if(pub) score+=1;
+  const ciudad=(r.ciudad_entidad||"");
+  if(ciudad==="Bogotá") score+=1; else score+=0.5;
+  return {minima,selAbrev,avc,evc,food,hotel,type,cls,score,txt};
+}
+function pass(r){
+  if(r.estado_resumen!=="Presentación de oferta") return false;
+  if(r.adjudicado!=="No") return false;
+  const txt=((r.nombre_del_procedimiento||"")+" "+(r.descripci_n_del_procedimiento||"")).toLowerCase();
+  if(has(txt,EXC)) return false;
+  if(!(has(txt,AV)||has(txt,EV)||has(txt,PUB)||has(txt,FOOD))) return false;
+  return true;
+}
+let RAW=[];
+function esc(s){return (s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+function render(list){
+  const res=document.getElementById("results");
+  if(!list.length){res.innerHTML='<div class="empty">No hay oportunidades que coincidan con el filtro en este periodo. Prueba "Ver todo" o amplía los días.</div>';return;}
+  let html='<h2 class="sec">'+list.length+' oportunidades</h2>';
+  for(const o of list){
+    const c=o.c;
+    const cardcls=c.score>=5?"hi":(c.score>=2?"mid":"lo");
+    const biddable=c.minima?'<span class="tag ok">Sin RUP</span>':'<span class="tag warn">Requiere RUP</span>';
+    html+='<div class="card '+cardcls+'">'
+      +'<div class="fit"><div class="score">'+Math.round(c.score)+'</div><div class="lbl">encaje</div></div>'
+      +'<div class="body"><h3>'+esc(o.objeto)+'</h3><div class="ent">'+esc(o.entidad)+'</div><div class="tags">'
+      +'<span class="'+c.cls+'">'+esc(c.type)+'</span>'
+      +'<span class="tag val">'+fmt(o.valor)+'</span>'
+      +'<span class="tag city">'+esc(o.ciudad||"")+'</span>'
+      +biddable
+      +(c.food?'<span class="tag warn">catering</span>':'')
+      +(c.hotel?'<span class="tag warn">hospedaje</span>':'')
+      +'<span class="tag">Pub: '+esc(o.fecha||"")+'</span>'
+      +'</div></div>'
+      +(o.url?'<a class="go" href="'+o.url+'" target="_blank" rel="noopener">Ver en SECOP →</a>':'')
+      +'</div>';
+  }
+  res.innerHTML=html;
+}
+function stats(list){
+  const prod=list.filter(o=>o.c.type.includes("AV")||o.c.type.includes("Producción")).length;
+  const val=list.reduce((a,b)=>a+(b.valor||0),0);
+  document.getElementById("stats").innerHTML=
+    '<div class="stat"><b>'+list.length+'</b><span>Oportunidades</span></div>'+
+    '<div class="stat"><b>'+prod+'</b><span>Producción / AV</span></div>'+
+    '<div class="stat"><b>'+fmt(val)+'</b><span>Valor sumado</span></div>';
+}
+function applyFilters(){
+  const q=document.getElementById("q").value.toLowerCase().trim();
+  const tipo=document.getElementById("tipo").value;
+  let list=RAW.slice();
+  if(q) list=list.filter(o=>(o.objeto+" "+o.entidad).toLowerCase().includes(q));
+  if(tipo==="prod") list=list.filter(o=>o.c.type.includes("AV")||o.c.type.includes("Producción"));
+  else if(tipo==="apto") list=list.filter(o=>o.c.minima && o.c.score>=1 && !(o.c.type.includes("Catering")));
+  list.sort((a,b)=>b.c.score-a.c.score || b.valor-a.valor);
+  stats(list); render(list);
+}
+async function fetchArea(where){
+  const url=API+"?$where="+encodeURIComponent(where)+"&$order=fecha_de_publicacion_del DESC&$limit=1000";
+  const r=await fetch(url,{headers:{'Accept':'application/json'}});
+  if(!r.ok) throw new Error("HTTP "+r.status);
+  return await r.json();
+}
+async function load(){
+  const res=document.getElementById("results");
+  res.innerHTML='<div class="loading">Consultando SECOP…</div>';
+  const since=isoDaysAgo(parseInt(document.getElementById("dias").value));
+  const region=document.getElementById("region").value;
+  try{
+    let rows=[];
+    if(region!=="cun") rows=rows.concat(await fetchArea("ciudad_entidad='Bogotá' AND fecha_de_publicacion_del>'"+since+"'"));
+    if(region!=="bog") rows=rows.concat(await fetchArea("departamento_entidad='Cundinamarca' AND fecha_de_publicacion_del>'"+since+"'"));
+    const seen=new Set(); RAW=[];
+    for(const r of rows){
+      if(!pass(r)) continue;
+      if(seen.has(r.referencia_del_proceso)) continue;
+      seen.add(r.referencia_del_proceso);
+      const u=r.urlproceso&&r.urlproceso.url?r.urlproceso.url:"";
+      RAW.push({entidad:r.entidad,objeto:(r.nombre_del_procedimiento||"").slice(0,180),valor:parseInt(parseFloat(r.precio_base||0)),ciudad:r.ciudad_entidad,modalidad:r.modalidad_de_contratacion,fecha:(r.fecha_de_publicacion_del||"").slice(0,10),url:u,c:classify(r)});
+    }
+    document.getElementById("meta").textContent="Actualizado "+new Date().toLocaleString("es-CO");
+    applyFilters();
+  }catch(e){
+    res.innerHTML='<div class="err"><b>No se pudo consultar SECOP.</b><br>'+esc(e.message)+'. Si abriste el archivo con doble clic y el navegador bloquea la conexión, súbelo a tu sitio web y ábrelo desde ahí.</div>';
+  }
+}
+document.getElementById("refresh").onclick=load;
+["region","dias","tipo"].forEach(id=>document.getElementById(id).onchange=(id==="tipo"?applyFilters:load));
+document.getElementById("tipo").onchange=applyFilters;
+document.getElementById("q").oninput=applyFilters;
+
+// ===== Acceso con contraseña =====
+const CLAVE = "verticeSECOP$";   // <<< CAMBIA esta palabra por tu contraseña antes de subir
+function unlock(){ document.getElementById("gate").style.display="none"; load(); }
+function tryPw(){
+  if(document.getElementById("pw").value===CLAVE){ try{localStorage.setItem("vrt_ok","1");}catch(e){} unlock(); }
+  else { document.getElementById("pwerr").textContent="Contraseña incorrecta"; }
+}
+document.getElementById("pwbtn").onclick=tryPw;
+document.getElementById("pw").addEventListener("keydown",e=>{ if(e.key==="Enter") tryPw(); });
+let _ok=false; try{_ok=localStorage.getItem("vrt_ok")==="1";}catch(e){}
+if(_ok){ unlock(); } else { document.getElementById("pw").focus(); }
+</script>
+</body>
+</html>
