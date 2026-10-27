@@ -333,14 +333,28 @@ function Presence() {
 }
 
 /* ========================== CONTACT ========================= */
+const WEB3FORMS_KEY = "e5e1c4e6-a48c-4db2-9bee-390ccde5f990";
+
 function Contact() {
   const [email, setEmail] = React.useState("");
   const [sent, setSent] = React.useState(false);
   const [err, setErr] = React.useState("");
-  function submit(e) {
+  const [sending, setSending] = React.useState(false);
+  const [failed, setFailed] = React.useState(false);
+  async function submit(e) {
     e.preventDefault();
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {setErr("Please enter a valid corporate email");return;}
-    setErr("");setSent(true);
+    setErr("");setFailed(false);setSending(true);
+    const data = new FormData(e.target);
+    data.append("access_key", WEB3FORMS_KEY);
+    data.append("subject", "Nueva solicitud desde verticecollective.co");
+    data.append("from_name", "Web Vértice Collective");
+    try {
+      const r = await fetch("https://api.web3forms.com/submit", { method: "POST", body: data });
+      const j = await r.json();
+      if (j.success) setSent(true); else setFailed(true);
+    } catch (_) { setFailed(true); }
+    setSending(false);
   }
   return (
     <section id="contact" className="relative py-28 md:py-40 px-6 md:px-10 bg-selva overflow-hidden">
@@ -377,13 +391,16 @@ function Contact() {
               </div> :
 
             <form onSubmit={submit} className="flex flex-col gap-5">
-                <Field label="Full name" placeholder="Your name" />
-                <Field label="Company" placeholder="Organization" />
-                <Field label="Corporate email" type="email" value={email} onChange={(e) => {setEmail(e.target.value);setErr("");}} error={err} placeholder="name@company.com" />
-                <button type="submit"
+                <Field label="Full name" name="name" placeholder="Your name" />
+                <Field label="Company" name="company" placeholder="Organization" />
+                <Field label="Corporate email" name="email" type="email" value={email} onChange={(e) => {setEmail(e.target.value);setErr("");}} error={err} placeholder="name@company.com" />
+                <Field label="Your project (optional)" name="message" multiline placeholder="Type of event, dates, city, number of guests" />
+                <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
+                <button type="submit" disabled={sending}
               className="mt-1 w-full flex items-center justify-center gap-2 bg-dorado hover:bg-dorado-bright text-selva font-body font-semibold text-[12px] uppercase tracking-[0.14em] rounded-full py-3.5 transition-colors">
-                  Send Enquiry <Icon name="arrow-up-right" size={15} color="#0D2E1F" />
+                  {sending ? "Sending..." : "Send Enquiry"} <Icon name="arrow-up-right" size={15} color="#0D2E1F" />
                 </button>
+                {failed && <p className="font-body text-[12px] text-center" style={{ color: "#E08B79" }}>We couldn't send your enquiry. Please try again in a moment.</p>}
                 <p className="font-body text-[11px] text-gris text-center">By sending you agree to be contacted by Vértice Collective S.A.S.</p>
               </form>
             }
@@ -393,14 +410,15 @@ function Contact() {
     </section>);
 
 }
-function Field({ label, type = "text", value, onChange, placeholder, error }) {
+function Field({ label, name, type = "text", value, onChange, placeholder, error, multiline }) {
   const [foc, setFoc] = React.useState(false);
+  const Tag = multiline ? "textarea" : "input";
   return (
     <label className="flex flex-col gap-2">
       <span className="font-body text-[11px] font-medium uppercase tracking-[0.14em] text-gris-light">{label}</span>
-      <input type={type} value={value} onChange={onChange} placeholder={placeholder}
+      <Tag type={multiline ? undefined : type} name={name} rows={multiline ? 3 : undefined} value={value} onChange={onChange} placeholder={placeholder}
       onFocus={() => setFoc(true)} onBlur={() => setFoc(false)}
-      className="font-body text-[15px] text-marfil bg-selva rounded-md px-4 py-3 outline-none transition-all"
+      className="font-body text-[15px] text-marfil bg-selva rounded-md px-4 py-3 outline-none transition-all resize-none"
       style={{ border: "1px solid " + (error ? "#B5523E" : foc ? "var(--vt-gold)" : "#1B3D2A"), boxShadow: foc ? "0 0 0 3px color-mix(in srgb, var(--vt-gold) 18%, transparent)" : "none" }} />
       {error && <span className="font-body text-[12px]" style={{ color: "#E08B79" }}>{error}</span>}
     </label>);
