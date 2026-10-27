@@ -3,7 +3,6 @@ const { Reveal, Icon, goTo, useParallax, MARK, VIDEOS } = window;
 const { WorldMap } = window;
 const { motion, useInView, useScroll, useTransform, animate } = (window.Motion || {});
 const PRESENCE_EASE = [0.22, 1, 0.36, 1];
-const LINKEDIN = "https://www.linkedin.com/in/sebastian-bruno-673ab2252/";
 
 /* ============================ NAV ============================ */
 function Nav() {
@@ -130,7 +129,7 @@ function Approach() {
         <Reveal variant="blur" delay={80}>
           <h2 className="font-display text-marfil font-medium tracking-[0.01em] leading-[1.08]"
           style={{ fontSize: "clamp(28px, 4.4vw, 60px)" }}>
-            Conceived, directed and delivered<br className="hidden md:block" /> — <span className="text-dorado">with our team at every step.</span>
+            Conceived, directed and delivered,<br className="hidden md:block" /> <span className="text-dorado">with our team at every step.</span>
           </h2>
         </Reveal>
       </div>
@@ -308,7 +307,7 @@ function Presence() {
         </h2>
 
         <p className="reveal font-body text-[16px] leading-relaxed text-gris-light max-w-[620px] mt-7">
-          We operate globally through a curated network of trusted local partners — delivering consistent executive standards wherever our clients convene.
+          We operate globally through a curated network of trusted local partners, delivering consistent executive standards wherever our clients convene.
         </p>
 
         {/* interactive world map — projected city nodes with hover cards */}
@@ -362,17 +361,8 @@ function Contact() {
           </Reveal>
           <Reveal delay={220}>
             <div className="mt-12 pt-7 border-t border-marfil/25 max-w-[440px]">
-              <a href={LINKEDIN} target="_blank" rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 font-display text-marfil text-[19px] tracking-[0.02em] hover:text-dorado transition-colors">
-                Sebastián Bruno Saavedra
-                <Icon name="linkedin" size={17} color="currentColor" />
-              </a>
-              <div className="font-body text-[11px] uppercase tracking-[0.16em] text-dorado mt-2">Founder &amp; Executive Producer</div>
-              <div className="font-body text-[14px] text-marfil/80 mt-3">+57 312 521 4592 · Bogotá D.C., Colombia</div>
-              <div className="font-body text-[14px] mt-1.5 flex flex-wrap gap-x-4 gap-y-1">
-                <a href="mailto:sebastian@verticecollective.co" className="text-marfil/80 hover:text-dorado transition-colors">sebastian@verticecollective.co</a>
-                <a href="https://www.verticecollective.co" target="_blank" rel="noopener noreferrer" className="text-marfil/80 hover:text-dorado transition-colors">www.verticecollective.co</a>
-              </div>
+              <div className="font-body text-[11px] uppercase tracking-[0.16em] text-dorado">Bogotá D.C., Colombia</div>
+              <div className="font-body text-[14px] text-marfil/80 mt-3">Tell us about your project through the form. Our team responds within one business day.</div>
             </div>
           </Reveal>
         </div>
@@ -423,24 +413,21 @@ function Footer() {
     <footer className="bg-deep px-6 md:px-10 pt-16 pb-10" style={{ borderTop: "3px solid var(--vt-gold)", borderBottom: "3px solid #C9A84C" }}>
       <div className="max-w-[1320px] mx-auto flex flex-wrap items-start justify-between gap-10">
         <div className="flex items-center">
-          <img src={typeof window !== "undefined" && window.__resources && window.__resources.logoFull || "assets/logo-vertice-full-ivory.png"} alt="Vértice — Connecting the Extraordinary" className="w-[150px] h-auto" style={{ width: "2px" }} />
+          <img src={typeof window !== "undefined" && window.__resources && window.__resources.logoFull || "assets/logo-vertice-full-ivory.png"} alt="Vértice Collective" className="w-[150px] h-auto" style={{ width: "2px" }} />
         </div>
         <div className="flex gap-16">
           <FooterCol title="Explore" items={[["About", "about"], ["Services", "services"], ["Presence", "presence"], ["Contact", "contact"]]} />
           <div>
             <div className="font-body text-[11px] font-medium uppercase tracking-[0.16em] text-dorado mb-4">Contact</div>
             <div className="flex flex-col gap-2.5 font-body text-[13px] text-gris-light">
-              <span>+57 312 521 4592</span>
-              <a href="mailto:sebastian@verticecollective.co" className="hover:text-dorado transition-colors">sebastian@verticecollective.co</a>
-              <a href="https://www.verticecollective.co" target="_blank" rel="noopener noreferrer" className="hover:text-dorado transition-colors">www.verticecollective.co</a>
+              <a href="#contact" onClick={(e) => { e.preventDefault(); goTo("contact"); }} className="hover:text-dorado transition-colors">Send an enquiry</a>
               <span>Bogotá D.C., Colombia</span>
-              <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className="hover:text-dorado transition-colors inline-flex items-center gap-1.5">LinkedIn <Icon name="arrow-up-right" size={12} color="currentColor" /></a>
             </div>
           </div>
         </div>
       </div>
       <div className="max-w-[1320px] mx-auto mt-8 pt-6 flex flex-wrap items-center justify-between gap-3" style={{ borderTop: "1px solid #C9A84C" }}>
-        <span className="font-body text-[12px] text-gris">Vértice Collective S.A.S. · Connecting the Extraordinary · © {new Date().getFullYear()}</span>
+        <span className="font-body text-[12px] text-gris">Vértice Collective S.A.S. · NIT 902.073.176-2 · © {new Date().getFullYear()}</span>
       </div>
     </footer>);
 
