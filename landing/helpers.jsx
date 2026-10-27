@@ -82,15 +82,15 @@ function useParallax(strength = 0.18) {
 const __R = (typeof window !== "undefined" && window.__resources) || {};
 const MARK = __R.logoMark || "assets/logo-mark.png";
 const VIDEOS = {
-  hero:     __R.vidHero     || "uploads/Congress.mp4",
-  approach: __R.vidApproach || "uploads/black-businessman-takes-notes-on-laptop-at-profess-2026-01-26-16-17-11-utc-4912f361.mp4",
-  galas:    __R.vidGalas    || "uploads/elegant-wedding-reception-table-setting-and-decor-2026-01-22-00-22-37-utc.mp4",
-  conf:     __R.vidConf     || "uploads/man-adjusting-settings-on-wireless-microphone-tran-2026-01-22-22-17-22-utc.mp4",
-  studio:   __R.vidStudio   || "uploads/professional-video-production-studio-with-diverse-2026-01-22-02-55-29-utc.mp4",
-  brand:    __R.vidBrand    || "uploads/Young Business People At Trade Fair.mp4",
-  hybrid:   __R.vidHybrid   || "uploads/professional-video-production-studio-with-diverse-2026-01-22-02-55-29-utc-06df5bb0.mp4",
-  presence: __R.vidPresence || "uploads/business-people-gathered-at-buffet-2026-01-20-15-43-13-utc.mp4",
-  onsite:   "uploads/woman-registering-volunteer-and-giving-uniform-at-2026-01-22-07-14-12-utc.mp4",
+  hero:     __R.vidHero     || "uploads/web/Congress.mp4",
+  approach: __R.vidApproach || "uploads/web/black-businessman-takes-notes-on-laptop-at-profess-2026-01-26-16-17-11-utc-4912f361.mp4",
+  galas:    __R.vidGalas    || "uploads/web/elegant-wedding-reception-table-setting-and-decor-2026-01-22-00-22-37-utc.mp4",
+  conf:     __R.vidConf     || "uploads/web/man-adjusting-settings-on-wireless-microphone-tran-2026-01-22-22-17-22-utc.mp4",
+  studio:   __R.vidStudio   || "uploads/web/professional-video-production-studio-with-diverse-2026-01-22-02-55-29-utc.mp4",
+  brand:    __R.vidBrand    || "uploads/web/Young Business People At Trade Fair.mp4",
+  hybrid:   __R.vidHybrid   || "uploads/web/professional-video-production-studio-with-diverse-2026-01-22-02-55-29-utc-06df5bb0.mp4",
+  presence: __R.vidPresence || "uploads/web/business-people-gathered-at-buffet-2026-01-20-15-43-13-utc.mp4",
+  onsite:   "uploads/web/woman-registering-volunteer-and-giving-uniform-at-2026-01-22-07-14-12-utc.mp4",
 };
 
 Object.assign(window, { Reveal, checkReveals, initReveals, Icon, goTo, useParallax, MARK, VIDEOS });

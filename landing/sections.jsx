@@ -260,10 +260,10 @@ function ServiceRow({ n, icon, t, d, vid, vids }) {
 }
 
 /* ========================= PRESENCE ========================= */
-const CITIES = ["Bogotá", "Bridgetown", "Port of Spain", "Lima", "Santiago", "Ciudad de Panamá", "Istanbul", "Barcelona", "Berlin"];
+const CITIES = ["Bogotá", "Bridgetown", "Port of Spain", "Lima", "Santiago", "Ciudad de Panamá", "Istanbul", "Barcelona", "Berlin", "Chicago", "San Antonio"];
 const STATS = [
   { kind: "count", value: 4, label: "Continents" },
-  { kind: "count", value: 9, label: "Cities" },
+  { kind: "count", value: 11, label: "Cities" },
   { kind: "count", value: 6, label: "Years of Execution" },
   { kind: "flip", display: "+$1M", label: "USD Executed" },
   { kind: "count", value: 30, prefix: "+", label: "Projects Delivered" },
@@ -303,7 +303,7 @@ function Presence() {
 
         <h2 className="reveal-blur font-display font-medium tracking-[0.02em] leading-[1.04] max-w-[900px]"
         style={{ fontSize: "clamp(34px, 5.4vw, 68px)" }}>
-          <span style={{ display: "block", color: "#F5F2EB" }}>Nine cities.</span>
+          <span style={{ display: "block", color: "#F5F2EB" }}>Eleven cities.</span>
           <span style={{ display: "block", color: "#C9A84C" }}>Four continents.</span>
         </h2>
 
@@ -440,7 +440,7 @@ function Footer() {
         </div>
       </div>
       <div className="max-w-[1320px] mx-auto mt-8 pt-6 flex flex-wrap items-center justify-between gap-3" style={{ borderTop: "1px solid #C9A84C" }}>
-        <span className="font-body text-[12px] text-gris">Vértice Collective S.A.S. · Connecting the Extraordinary · © 2025</span>
+        <span className="font-body text-[12px] text-gris">Vértice Collective S.A.S. · Connecting the Extraordinary · © {new Date().getFullYear()}</span>
       </div>
     </footer>);
 

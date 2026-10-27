@@ -55,15 +55,17 @@ for (let lon = -120; lon <= 40; lon += 20) GRATICULE.push([proj(lon, 60), proj(l
 for (let lat = 40; lat >= -56; lat -= 20) GRATICULE.push([proj(-125, lat), proj(42, lat)]);
 
 const MAP_CITIES = [
-  { name: "Bogotá", country: "Colombia", lon: -74.0721, lat: 4.7110, img: "uploads/Bogotá.jpg" },
-  { name: "Bridgetown", country: "Barbados", lon: -59.6167, lat: 13.1000, img: "uploads/Barbados.jpg" },
-  { name: "Port of Spain", country: "Trinidad & Tobago", lon: -61.5180, lat: 10.6540, img: "uploads/Trinidad.jpg" },
+  { name: "Bogotá", country: "Colombia", lon: -74.0721, lat: 4.7110, img: "uploads/web/Bogotá.webp" },
+  { name: "Bridgetown", country: "Barbados", lon: -59.6167, lat: 13.1000, img: "uploads/web/Barbados.webp" },
+  { name: "Port of Spain", country: "Trinidad & Tobago", lon: -61.5180, lat: 10.6540, img: "uploads/web/Trinidad.webp" },
   { name: "Lima", country: "Peru", lon: -77.0428, lat: -12.0464, img: "https://images.unsplash.com/photo-1531968455001-5c5272a41129?w=400" },
-  { name: "Santiago", country: "Chile", lon: -70.6693, lat: -33.4489, img: "uploads/Santiago.jpg" },
-  { name: "Ciudad de Panamá", country: "Panama", lon: -79.5197, lat: 8.9936, img: "uploads/Panama.jpg" },
+  { name: "Santiago", country: "Chile", lon: -70.6693, lat: -33.4489, img: "uploads/web/Santiago.webp" },
+  { name: "Ciudad de Panamá", country: "Panama", lon: -79.5197, lat: 8.9936, img: "uploads/web/Panama.webp" },
   { name: "Istanbul", country: "Türkiye", lon: 28.9784, lat: 41.0082, img: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=400" },
   { name: "Barcelona", country: "Spain", lon: 2.1734, lat: 41.3851, img: "https://images.unsplash.com/photo-1583422409516-2895a77efded?w=400" },
   { name: "Berlin", country: "Germany", lon: 13.4050, lat: 52.5200, img: "https://images.unsplash.com/photo-1560969184-10fe8719e047?w=400" },
+  { name: "Chicago", country: "United States", lon: -87.6298, lat: 41.8781, img: "https://images.unsplash.com/photo-1638490611502-7d506eb356e3?w=400&auto=format&fit=crop" },
+  { name: "San Antonio", country: "United States", lon: -98.4936, lat: 29.4241, img: "https://images.unsplash.com/photo-1605649666555-e321522c3023?w=400&auto=format&fit=crop" },
 ];
 
 const MAP_EASE = [0.22, 1, 0.36, 1];
