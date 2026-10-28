@@ -71,7 +71,7 @@
 
 <section class="contenedor portada" aria-labelledby="titulo">
   <div class="portada-texto">
-    <p class="etiqueta">Bogotá · 11 ciudades · 4 continentes</p>
+    <p class="etiqueta">Desde Bogotá · 30+ eventos en 11 ciudades de 4 continentes</p>
     <h1 id="titulo">Producción de experiencias ejecutivas</h1>
     <p class="bajada">Eventos corporativos, congresos, lanzamientos y contenido audiovisual, producidos de principio a fin por nuestro equipo.</p>
     <div class="acciones">
@@ -83,15 +83,6 @@
     <img src="/assets/img/istanbul-alfombra-1600.webp" srcset="/assets/img/istanbul-alfombra-800.webp 800w, /assets/img/istanbul-alfombra-1600.webp 1600w" sizes="(max-width: 980px) 100vw, 620px" width="1600" height="992" alt="Entrada a un salón de evento con alfombra roja y tótems de luz en Istanbul" fetchpriority="high">
     <figcaption>Evento satélite en congreso médico · Istanbul</figcaption>
   </figure>
-</section>
-
-<section class="cifras" aria-label="Cifras">
-  <dl class="contenedor">
-    <div><dt>30+</dt><dd>eventos producidos</dd></div>
-    <div><dt>USD 1M+</dt><dd>en producción ejecutada</dd></div>
-    <div><dt>11</dt><dd>ciudades</dd></div>
-    <div><dt>4</dt><dd>continentes</dd></div>
-  </dl>
 </section>
 
 <section id="servicios" class="contenedor seccion servicios" aria-labelledby="titulo-servicios">
@@ -111,27 +102,106 @@
       <h2 id="titulo-proyectos">Proyectos recientes</h2>
       <p>Una muestra de los últimos tres años. Por confidencialidad, no mostramos contenido de nuestros clientes.</p>
     </div>
-    <div class="tarjetas">
-      <figure class="tarjeta">
-        <img src="/assets/img/barbados-salon-800.webp" srcset="/assets/img/barbados-salon-800.webp 800w, /assets/img/barbados-salon-1600.webp 1320w" sizes="(max-width: 760px) 100vw, 400px" width="800" height="600" alt="Salón montado con mantelería morada, sillas blancas y torre de iluminación en Barbados" loading="lazy">
-        <figcaption><span class="lugar">Barbados</span><h3>Lanzamiento de producto</h3></figcaption>
-      </figure>
-      <figure class="tarjeta">
-        <img src="/assets/img/barcelona-truss-800.webp" srcset="/assets/img/barcelona-truss-800.webp 600w, /assets/img/barcelona-truss-1600.webp 1200w" sizes="(max-width: 760px) 100vw, 400px" width="600" height="800" alt="Salón con mesas montadas y torre de truss con iluminación en Barcelona" loading="lazy">
-        <figcaption><span class="lugar">Barcelona · Berlín · Istanbul · San Antonio · Chicago</span><h3>Eventos satélite en congresos médicos</h3></figcaption>
-      </figure>
-      <figure class="tarjeta">
-        <img src="/assets/img/trinidad-centro-mesa-800.webp" srcset="/assets/img/trinidad-centro-mesa-800.webp 600w, /assets/img/trinidad-centro-mesa-1600.webp 1200w" sizes="(max-width: 760px) 100vw, 400px" width="600" height="800" alt="Centro de mesa con flores naranjas y platos de borde dorado en Trinidad y Tobago" loading="lazy">
-        <figcaption><span class="lugar">Trinidad y Tobago</span><h3>Lanzamiento de producto</h3></figcaption>
-      </figure>
+    <div class="carrusel" data-carrusel>
+      <div class="carrusel-cabeza">
+        <div class="carrusel-texto">
+          <p class="lugar">Istanbul · Berlín · Barcelona · San Antonio · Chicago</p>
+          <h3>Eventos satélite en congresos médicos</h3>
+          <p class="desc">Simposios de la industria farmacéutica en el marco de congresos internacionales.</p>
+        </div>
+        <div class="controles">
+          <button type="button" class="ctrl" data-anterior aria-label="Foto anterior"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <span class="contador" aria-live="polite"><span data-actual>1</span> / 13</span>
+          <button type="button" class="ctrl" data-siguiente aria-label="Foto siguiente"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+      <ul class="pista" tabindex="0" aria-label="Galería: Eventos satélite en congresos médicos">
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/istanbul-alfombra.webp" width="1355" height="840" alt="Entrada al salón con alfombra roja y tótems de luz · Istanbul" decoding="async"><figcaption>Istanbul</figcaption></figure></li>
+        <li class="diapo"><figure><video class="media" muted loop playsinline preload="none" width="474" height="840" poster="/assets/img/galeria/istanbul-pantalla-led-poster.webp" aria-label="Prueba de color en la pantalla LED del escenario · Istanbul"><source src="/assets/video/istanbul-pantalla-led.mp4" type="video/mp4"></video><figcaption>Istanbul · Video</figcaption></figure></li>
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/barcelona-escenario.webp" width="630" height="840" alt="Escenario con sillones para panel y salón montado · Barcelona" loading="lazy" decoding="async"><figcaption>Barcelona</figcaption></figure></li>
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/berlin-mesa.webp" width="630" height="840" alt="Mesa montada con copas rosadas · Berlín" loading="lazy" decoding="async"><figcaption>Berlín</figcaption></figure></li>
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/sanantonio-consola.webp" width="1467" height="840" alt="Consola de audio en el control técnico · San Antonio" loading="lazy" decoding="async"><figcaption>San Antonio</figcaption></figure></li>
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/sanantonio-salon-1.webp" width="630" height="840" alt="Salón montado con iluminación ambiental · San Antonio" loading="lazy" decoding="async"><figcaption>San Antonio</figcaption></figure></li>
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/barcelona-truss.webp" width="630" height="840" alt="Torre de truss con luces junto al salón montado · Barcelona" loading="lazy" decoding="async"><figcaption>Barcelona</figcaption></figure></li>
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/berlin-lounge.webp" width="630" height="840" alt="Zona de sillones y mesas auxiliares · Berlín" loading="lazy" decoding="async"><figcaption>Berlín</figcaption></figure></li>
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/sanantonio-salon-3.webp" width="630" height="840" alt="Salón con pantallas listo para recibir invitados · San Antonio" loading="lazy" decoding="async"><figcaption>San Antonio</figcaption></figure></li>
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/barcelona-sillones.webp" width="1217" height="840" alt="Sillones de panel sobre la tarima · Barcelona" loading="lazy" decoding="async"><figcaption>Barcelona</figcaption></figure></li>
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/sanantonio-salon-2.webp" width="630" height="840" alt="Vista general del salón con escenario al fondo · San Antonio" loading="lazy" decoding="async"><figcaption>San Antonio</figcaption></figure></li>
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/chicago-pantalla.webp" width="1120" height="840" alt="Pantalla fast-fold en salón · Chicago" loading="lazy" decoding="async"><figcaption>Chicago</figcaption></figure></li>
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/sanantonio-acceso.webp" width="630" height="840" alt="Acceso al salón con iluminación · San Antonio" loading="lazy" decoding="async"><figcaption>San Antonio</figcaption></figure></li>
+      </ul>
     </div>
-    <p class="nota">También: evento médico informativo en Lima, evento corporativo privado en Panamá y evento educativo en Santiago.</p>
+    <div class="carrusel" data-carrusel>
+      <div class="carrusel-cabeza">
+        <div class="carrusel-texto">
+          <p class="lugar">Barbados · Trinidad y Tobago</p>
+          <h3>Lanzamientos de producto</h3>
+          <p class="desc">Ambientación, registro, catering y puesta en escena.</p>
+        </div>
+        <div class="controles">
+          <button type="button" class="ctrl" data-anterior aria-label="Foto anterior"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <span class="contador" aria-live="polite"><span data-actual>1</span> / 8</span>
+          <button type="button" class="ctrl" data-siguiente aria-label="Foto siguiente"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+      <ul class="pista" tabindex="0" aria-label="Galería: Lanzamientos de producto">
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/barbados-salon.webp" width="1120" height="840" alt="Salón montado con mantelería morada y torre de luces · Barbados" loading="lazy" decoding="async"><figcaption>Barbados</figcaption></figure></li>
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/barbados-escalera.webp" width="1024" height="768" alt="Escalera intervenida con telas blancas cruzadas · Barbados" loading="lazy" decoding="async"><figcaption>Barbados</figcaption></figure></li>
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/trinidad-centro-mesa.webp" width="630" height="840" alt="Centro de mesa con flores naranjas y platos de borde dorado · Trinidad y Tobago" loading="lazy" decoding="async"><figcaption>Trinidad y Tobago</figcaption></figure></li>
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/barbados-postres.webp" width="630" height="840" alt="Mesa de postres · Barbados" loading="lazy" decoding="async"><figcaption>Barbados</figcaption></figure></li>
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/trinidad-postres-1.webp" width="630" height="840" alt="Postres individuales · Trinidad y Tobago" loading="lazy" decoding="async"><figcaption>Trinidad y Tobago</figcaption></figure></li>
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/barbados-coctel.webp" width="1120" height="840" alt="Cóctel en la terraza con iluminación · Barbados" loading="lazy" decoding="async"><figcaption>Barbados</figcaption></figure></li>
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/barbados-bocados.webp" width="1024" height="768" alt="Bocados del menú · Barbados" loading="lazy" decoding="async"><figcaption>Barbados</figcaption></figure></li>
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/trinidad-postres-2.webp" width="630" height="840" alt="Postres en mesa de buffet · Trinidad y Tobago" loading="lazy" decoding="async"><figcaption>Trinidad y Tobago</figcaption></figure></li>
+      </ul>
+    </div>
+    <div class="carrusel" data-carrusel>
+      <div class="carrusel-cabeza">
+        <div class="carrusel-texto">
+          <p class="lugar">Lima · Ciudad de Panamá · Santiago</p>
+          <h3>Eventos corporativos y educativos</h3>
+          <p class="desc">Eventos privados, médicos informativos y de formación, con producción técnica completa.</p>
+        </div>
+        <div class="controles">
+          <button type="button" class="ctrl" data-anterior aria-label="Foto anterior"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <span class="contador" aria-live="polite"><span data-actual>1</span> / 11</span>
+          <button type="button" class="ctrl" data-siguiente aria-label="Foto siguiente"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+      <ul class="pista" tabindex="0" aria-label="Galería: Eventos corporativos y educativos">
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/lima-luces-1.webp" width="630" height="840" alt="Cabezas móviles en torre de truss · Lima" loading="lazy" decoding="async"><figcaption>Lima</figcaption></figure></li>
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/panama-salon-led.webp" width="1120" height="840" alt="Salón con pantalla LED e iluminación azul y ámbar · Ciudad de Panamá" loading="lazy" decoding="async"><figcaption>Ciudad de Panamá</figcaption></figure></li>
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/santiago-escaleta.webp" width="473" height="840" alt="Ensayo con la escaleta en pantalla · Santiago" loading="lazy" decoding="async"><figcaption>Santiago</figcaption></figure></li>
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/panama-salon-u.webp" width="1120" height="840" alt="Salón en U con iluminación de color · Ciudad de Panamá" loading="lazy" decoding="async"><figcaption>Ciudad de Panamá</figcaption></figure></li>
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/lima-montaje.webp" width="525" height="840" alt="Montaje de truss y equipos · Lima" loading="lazy" decoding="async"><figcaption>Lima</figcaption></figure></li>
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/santiago-recepcion.webp" width="630" height="840" alt="Recepción con iluminación verde · Santiago" loading="lazy" decoding="async"><figcaption>Santiago</figcaption></figure></li>
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/panama-montaje.webp" width="1120" height="840" alt="Flight cases y equipos en montaje · Ciudad de Panamá" loading="lazy" decoding="async"><figcaption>Ciudad de Panamá</figcaption></figure></li>
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/lima-salon.webp" width="630" height="840" alt="Salón principal con gobos en el techo · Lima" loading="lazy" decoding="async"><figcaption>Lima</figcaption></figure></li>
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/panama-salon-2.webp" width="1120" height="840" alt="Salón en montaje con escenario y truss · Ciudad de Panamá" loading="lazy" decoding="async"><figcaption>Ciudad de Panamá</figcaption></figure></li>
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/lima-luces-2.webp" width="630" height="840" alt="Luces en torre de truss · Lima" loading="lazy" decoding="async"><figcaption>Lima</figcaption></figure></li>
+        <li class="diapo"><figure><img class="media" src="/assets/img/galeria/lima-backstage.webp" width="630" height="840" alt="Distribución eléctrica junto al escenario · Lima" loading="lazy" decoding="async"><figcaption>Lima</figcaption></figure></li>
+      </ul>
+    </div>
   </div>
 </section>
 
 <section class="contenedor marcas" aria-labelledby="titulo-marcas">
   <h2 id="titulo-marcas" class="etiqueta">Marcas con las que hemos trabajado</h2>
-  <p class="lista">Novartis · Novo Nordisk · Roche · MSD · Sandoz · SENA · Cenipalma · P&amp;M · IAB · Santillana · Richmond · Loqueleo · Calazans</p>
+  <ul class="rotador" data-rotador>
+    <li>Novartis</li>
+    <li>Novo Nordisk</li>
+    <li>Roche</li>
+    <li>MSD</li>
+    <li>Sandoz</li>
+    <li>SENA</li>
+    <li>Cenipalma</li>
+    <li>P&amp;M</li>
+    <li>IAB</li>
+    <li>Santillana</li>
+    <li>Richmond</li>
+    <li>Loqueleo</li>
+    <li>Calazans</li>
+  </ul>
 </section>
 
 <section id="metodo" class="contenedor metodo" aria-labelledby="titulo-metodo">
@@ -181,5 +251,6 @@
 </footer>
 
 <script src="/assets/js/formulario.js" defer></script>
+<script src="/assets/js/galeria.js" defer></script>
 </body>
 </html>
