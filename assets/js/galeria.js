@@ -45,20 +45,4 @@
     videos.forEach(function (v) { v.controls = true; });
   }
 
-  // Marcas que rotan de a 3
-  document.querySelectorAll('[data-rotador]').forEach(function (r) {
-    var items = Array.prototype.slice.call(r.children);
-    if (reducir || items.length <= 3) return;
-    r.classList.add('activo');
-    r.setAttribute('aria-live', 'off');
-    var inicio = 0, pausa = false;
-    function mostrar() {
-      items.forEach(function (li) { li.classList.remove('visible'); });
-      for (var k = 0; k < 3; k++) items[(inicio + k) % items.length].classList.add('visible');
-    }
-    mostrar();
-    setInterval(function () { if (pausa || document.hidden) return; inicio = (inicio + 3) % items.length; mostrar(); }, 2800);
-    r.addEventListener('mouseenter', function () { pausa = true; });
-    r.addEventListener('mouseleave', function () { pausa = false; });
-  });
 })();
