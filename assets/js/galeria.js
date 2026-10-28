@@ -35,7 +35,19 @@
   });
 
   // Videos: se reproducen solo cuando están a la vista
-  var videos = document.querySelectorAll('.diapo video');
+  var videos = document.querySelectorAll('.diapo video[loop]');
+
+  // Videos con sonido: solo uno a la vez, y se pausa al salir de pantalla
+  var conSonido = Array.prototype.slice.call(document.querySelectorAll('.diapo video[controls]'));
+  conSonido.forEach(function (v) {
+    v.addEventListener('play', function () { conSonido.forEach(function (o) { if (o !== v) o.pause(); }); });
+  });
+  if (conSonido.length && 'IntersectionObserver' in window) {
+    var ioSonido = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (!e.isIntersecting) e.target.pause(); });
+    }, { threshold: 0.2 });
+    conSonido.forEach(function (v) { ioSonido.observe(v); });
+  }
   if (videos.length && 'IntersectionObserver' in window && !reducir) {
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) { e.target.play().catch(function () {}); } else { e.target.pause(); } });
