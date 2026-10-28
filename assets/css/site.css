@@ -176,3 +176,4 @@ form{display:flex;flex-direction:column;gap:18px}
   .esfera{position:static;width:auto;height:auto;margin:0;transform:none;animation:none;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 32px}
   .esfera li{position:static;transform:none}
 }
+@media (max-width:640px){.pista-video .media{height:auto;width:84vw;max-height:420px;object-fit:contain}}
