@@ -1,166 +1,185 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vértice Collective | Connecting the Extraordinary</title>
-<meta name="description" content="Executive experience production from Bogotá: corporate events, congresses, launches, streaming and video. 30+ projects across 11 cities on 4 continents.">
+<title>Vértice Collective | Producción de experiencias ejecutivas en Bogotá</title>
+<meta name="description" content="Producimos eventos corporativos, congresos médicos, lanzamientos de producto y contenido audiovisual. 30+ eventos en 11 ciudades de 4 continentes. Cotiza tu próximo proyecto.">
 <link rel="canonical" href="https://verticecollective.co/">
+<link rel="alternate" hreflang="es" href="https://verticecollective.co/">
+<link rel="alternate" hreflang="en" href="https://verticecollective.co/en/">
+<link rel="alternate" hreflang="x-default" href="https://verticecollective.co/">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#0D2E1F">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vértice Collective">
+<meta property="og:locale" content="es_CO">
+<meta property="og:locale:alternate" content="en_US">
 <meta property="og:url" content="https://verticecollective.co/">
-<meta property="og:title" content="Vértice Collective | Connecting the Extraordinary">
-<meta property="og:description" content="Executive experience production from Bogotá: corporate events, congresses, launches, streaming and video. 30+ projects across 11 cities on 4 continents.">
-<meta property="og:image" content="https://verticecollective.co/assets/og-image.jpg">
+<meta property="og:title" content="Vértice Collective | Producción de experiencias ejecutivas">
+<meta property="og:description" content="Eventos corporativos, congresos médicos, lanzamientos y contenido audiovisual. Desde Bogotá, en 11 ciudades de 4 continentes.">
+<meta property="og:image" content="https://verticecollective.co/assets/img/og-vertice.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="_ds/v-rtice-design-system-7ea98b95-d88c-44ef-9f43-1bdbdc6ad883/styles.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          selva: "#0D2E1F", deep: "#0A2417", card: "#0F3D23",
-          emerald: { DEFAULT: "#1B6B45", light: "#2A8659", dark: "#155539" },
-          dorado: { DEFAULT: "#C9A84C", bright: "#D9BC68", dark: "#A8893A" },
-          marfil: "#F5F2EB", gris: { DEFAULT: "#8AABA0", light: "#CCDED7", deep: "#5E7A70" },
-          line: "#1B3D2A",
-        },
-        fontFamily: {
-          display: ['"Neue Haas Grotesk Text Pro"', "system-ui", "sans-serif"],
-          body: ['"Inter"', "system-ui", "sans-serif"],
-        },
-      },
-    },
-  };
+<link rel="preload" href="/assets/fonts/cormorant-garamond-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://verticecollective.co/#empresa",
+  "name": "Vértice Collective",
+  "legalName": "Vértice Collective S.A.S.",
+  "taxID": "902.073.176-2",
+  "url": "https://verticecollective.co/",
+  "logo": "https://verticecollective.co/assets/img/logo-vertice-selva.png",
+  "image": "https://verticecollective.co/assets/img/og-vertice.jpg",
+  "description": "Productora de experiencias ejecutivas: eventos corporativos, eventos satélite en congresos médicos, lanzamientos de producto, producción técnica y streaming, y edición de video corporativo.",
+  "address": {"@type": "PostalAddress", "addressLocality": "Bogotá", "addressRegion": "Bogotá D.C.", "addressCountry": "CO"},
+  "areaServed": ["Colombia", "Latinoamérica", "Caribe", "Europa", "Estados Unidos"],
+  "knowsLanguage": ["es", "en"],
+  "makesOffer": [
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Eventos satélite en congresos médicos"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Lanzamientos de producto"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Eventos corporativos y educativos"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Producción técnica y streaming"}},
+    {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Edición de video corporativo"}}
+  ]
+}
 </script>
-<style>
-  /* ── Tweakable feel variables (driven by the Tweaks panel) ── */
-  :root {
-    --vt-gold: #C9A84C;
-    --vt-gold-bright: #D9BC68;
-    --vt-gold-deep: #A8893A;
-    --vt-reveal-dur: .95s;
-    --vt-reveal-dist: 34px;
-    --vt-reveal-blur: 16px;
-    /* atmosphere overlay knobs (set per data-atmos below) */
-    --vt-atmos-tint: transparent;
-    --vt-atmos-blend: normal;
-    --vt-atmos-vignette: rgba(4,14,9,0);
-    --vt-body: #0D2E1F;
-  }
-
-  html { scroll-behavior: smooth; }
-  body { margin: 0; background: var(--vt-body); color: #F5F2EB; font-family: "Inter", system-ui, sans-serif; -webkit-font-smoothing: antialiased; transition: background .6s ease; }
-  ::selection { background: var(--vt-gold); color: #0D2E1F; }
-
-  /* ── Atmosphere: a single fixed full-page wash + vignette over all content ── */
-  #vt-atmos { position: fixed; inset: 0; pointer-events: none; z-index: 2147483000;
-    background: var(--vt-atmos-tint); mix-blend-mode: var(--vt-atmos-blend);
-    transition: background .6s ease; }
-  #vt-atmos::after { content: ""; position: absolute; inset: 0;
-    background: radial-gradient(120% 115% at 50% 32%, transparent 42%, var(--vt-atmos-vignette) 100%);
-    transition: background .6s ease; }
-  body[data-atmos="nocturne"] { --vt-body: #071710;
-    --vt-atmos-tint: linear-gradient(180deg, #0a2016 0%, #050f0a 100%); --vt-atmos-blend: multiply;
-    --vt-atmos-vignette: rgba(3,11,7,0.78); }
-  body[data-atmos="daybreak"] { --vt-body: #11442d;
-    --vt-atmos-tint: linear-gradient(180deg, rgba(150,182,166,0.20) 0%, rgba(110,150,132,0.13) 100%); --vt-atmos-blend: screen;
-    --vt-atmos-vignette: rgba(4,14,9,0); }
-
-  /* Scroll-reveal — entrance distance / duration / blur all tweakable */
-  @keyframes vt-rise { from { opacity: 0; transform: translateY(var(--vt-reveal-dist)); } to { opacity: 1; transform: none; } }
-  @keyframes vt-rise-blur { from { opacity: 0; filter: blur(var(--vt-reveal-blur)); transform: translateY(calc(var(--vt-reveal-dist) * 0.65)); } to { opacity: 1; filter: blur(0); transform: none; } }
-  .reveal { opacity: 0; }
-  .reveal.is-in { animation: vt-rise var(--vt-reveal-dur) cubic-bezier(.16,1,.3,1) both; }
-  .reveal-blur { opacity: 0; }
-  .reveal-blur.is-in { animation: vt-rise-blur calc(var(--vt-reveal-dur) * 1.2) cubic-bezier(.16,1,.3,1) both; }
-  @media (prefers-reduced-motion: reduce) { .reveal, .reveal-blur { animation: none !important; opacity: 1 !important; filter: none !important; transform: none !important; } }
-
-  /* ── Gold accent follows --vt-gold so the "Accent metal" tweak retints everything ── */
-  .text-dorado { color: var(--vt-gold) !important; }
-  .hover\:text-dorado:hover { color: var(--vt-gold) !important; }
-  .bg-dorado { background-color: var(--vt-gold) !important; }
-  .hover\:bg-dorado:hover { background-color: var(--vt-gold) !important; }
-  .bg-dorado-bright, .hover\:bg-dorado-bright:hover { background-color: var(--vt-gold-bright) !important; }
-  .bg-dorado\/80 { background-color: color-mix(in srgb, var(--vt-gold) 80%, transparent) !important; }
-  .bg-dorado\/70 { background-color: color-mix(in srgb, var(--vt-gold) 70%, transparent) !important; }
-  .border-dorado\/70 { border-color: color-mix(in srgb, var(--vt-gold) 70%, transparent) !important; }
-
-  /* Hero wordmark scaling */
-  .hero-word { font-size: clamp(64px, 14.5vw, 224px); line-height: .84; letter-spacing: .01em; }
-
-  /* Marquee */
-  .marquee { display: inline-flex; white-space: nowrap; will-change: transform; animation: marquee 38s linear infinite; }
-  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-  .marquee-wrap:hover .marquee { animation-play-state: paused; }
-
-  /* image-slot empty state recolor for dark */
-  image-slot::part(empty) { color: #8AABA0; }
-  image-slot::part(frame) { background: #0A2417; }
-
-  .glass { background: rgba(10,36,23,0.55); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
-  .grain { background-image: url("assets/pattern-network.svg"); background-size: 420px; }
-
-  /* Two-clip dissolve loop (Conferences & Summits) — the top video fades in and out
-     over the base one, continuously mixing the two. */
-  @keyframes vt-mix { 0%, 14% { opacity: 0; } 46%, 60% { opacity: 1; } 92%, 100% { opacity: 0; } }
-  .vt-mix-top { opacity: 0; animation: vt-mix 12s ease-in-out infinite; }
-  @media (prefers-reduced-motion: reduce) { .vt-mix-top { animation: none; opacity: .5; } }
-
-  /* ── Presence world map: pulsing city nodes ── */
-  .vt-node { position: absolute; transform: translate(-50%, -50%); }
-  .vt-node-core { position: absolute; left: 50%; top: 50%; width: 9px; height: 9px; border-radius: 9999px;
-    background: #C9A84C; transform: translate(-50%, -50%); box-shadow: 0 0 0 2px rgba(13,46,31,0.9), 0 0 12px rgba(201,168,76,0.7); z-index: 2; }
-  .vt-ping { position: absolute; left: 50%; top: 50%; width: 16px; height: 16px; border-radius: 9999px;
-    background: var(--vt-gold, #C9A84C); transform: translate(-50%, -50%); animation: vt-ping 2s ease-out infinite; z-index: 1; }
-  @keyframes vt-ping { 0% { transform: translate(-50%, -50%) scale(1); opacity: 1; } 100% { transform: translate(-50%, -50%) scale(1.8); opacity: 0; } }
-  @media (prefers-reduced-motion: reduce) { .vt-ping { animation: none; opacity: 0; } }
-
-  /* map entrance (fade + scale), CSS-driven via data-in */
-  .vt-map { opacity: 0; transform: scale(0.95); transform-origin: center;
-    transition: opacity 1.2s cubic-bezier(.22,1,.36,1), transform 1.2s cubic-bezier(.22,1,.36,1); }
-  .vt-map[data-in="1"] { opacity: 1; transform: none; }
-
-  /* dots pop in one-by-one (transition-delay set inline per node) */
-  .vt-node-wrap { opacity: 0; transform: scale(0); transform-origin: center;
-    transition: opacity .45s ease, transform .45s cubic-bezier(.34,1.56,.64,1); }
-  .vt-node-wrap[data-in="1"] { opacity: 1; transform: scale(1); }
-
-  /* hover card: scale .8→1, opacity 0→1, y 10→0 (x holds the edge-nudge) */
-  .vt-card { opacity: 0; transform: translate(var(--vt-card-x, -50%), 10px) scale(0.8);
-    transition: opacity .3s cubic-bezier(.22,1,.36,1), transform .3s cubic-bezier(.22,1,.36,1); }
-  .vt-card[data-below="1"] { transform: translate(var(--vt-card-x, -50%), -10px) scale(0.8); }
-  .vt-node-wrap[data-hover="1"] .vt-card { opacity: 1; transform: translate(var(--vt-card-x, -50%), 0) scale(1); }
-  @media (prefers-reduced-motion: reduce) {
-    .vt-map, .vt-node-wrap { opacity: 1 !important; transform: none !important; transition: none; }
-  }
-
-</style>
 </head>
 <body>
-  <div id="root"></div>
-  <div id="vt-atmos"></div>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
 
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
-  <script src="image-slot.js"></script>
-  <script>window.process = window.process || { env: { NODE_ENV: "production" } };</script>
-  <script src="https://unpkg.com/framer-motion@11.18.2/dist/framer-motion.js"></script>
+<header class="encabezado">
+  <div class="contenedor">
+    <a class="marca" href="/"><img src="/assets/img/logo-vertice-selva.png" alt="Vértice Collective" width="600" height="391"></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#metodo">Cómo trabajamos</a>
+      <a href="#contacto">Contacto</a>
+      <span class="idioma"><a href="/" aria-current="page" lang="es">ES</a> · <a href="/en/" lang="en" hreflang="en">EN</a></span>
+    </nav>
+  </div>
+</header>
 
-  <script type="text/babel" src="tweaks-panel.jsx"></script>
-  <script type="text/babel" src="landing/helpers.jsx"></script>
-  <script type="text/babel" src="landing/worldmap.jsx"></script>
-  <script type="text/babel" src="landing/sections.jsx"></script>
-  <script type="text/babel" src="landing/app.jsx"></script>
-  <script type="text/babel">
-    ReactDOM.createRoot(document.getElementById("root")).render(<VerticeLanding />);
-  </script>
+<main id="contenido">
+
+<section class="contenedor portada" aria-labelledby="titulo">
+  <div class="portada-texto">
+    <p class="etiqueta">Bogotá · 11 ciudades · 4 continentes</p>
+    <h1 id="titulo">Producción de experiencias ejecutivas</h1>
+    <p class="bajada">Eventos corporativos, congresos, lanzamientos y contenido audiovisual, producidos de principio a fin por nuestro equipo.</p>
+    <div class="acciones">
+      <a class="boton" href="#contacto">Cuéntanos tu proyecto</a>
+      <a href="#proyectos">Ver proyectos</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/assets/img/istanbul-alfombra-1600.webp" srcset="/assets/img/istanbul-alfombra-800.webp 800w, /assets/img/istanbul-alfombra-1600.webp 1600w" sizes="(max-width: 980px) 100vw, 620px" width="1600" height="992" alt="Entrada a un salón de evento con alfombra roja y tótems de luz en Istanbul" fetchpriority="high">
+    <figcaption>Evento satélite en congreso médico · Istanbul</figcaption>
+  </figure>
+</section>
+
+<section class="cifras" aria-label="Cifras">
+  <dl class="contenedor">
+    <div><dt>30+</dt><dd>eventos producidos</dd></div>
+    <div><dt>USD 1M+</dt><dd>en producción ejecutada</dd></div>
+    <div><dt>11</dt><dd>ciudades</dd></div>
+    <div><dt>4</dt><dd>continentes</dd></div>
+  </dl>
+</section>
+
+<section id="servicios" class="contenedor seccion servicios" aria-labelledby="titulo-servicios">
+  <h2 id="titulo-servicios">Lo que producimos</h2>
+  <ol>
+    <li class="servicio"><span class="num" aria-hidden="true">01</span><h3>Eventos satélite en congresos médicos</h3><p>Simposios y encuentros de la industria farmacéutica en el marco de congresos internacionales. Istanbul, Berlín, Barcelona, San Antonio y Chicago.</p></li>
+    <li class="servicio"><span class="num" aria-hidden="true">02</span><h3>Lanzamientos de producto</h3><p>Concepto, ambientación, registro, catering y puesta en escena para presentar un producto ante la audiencia correcta.</p></li>
+    <li class="servicio"><span class="num" aria-hidden="true">03</span><h3>Eventos corporativos y educativos</h3><p>Reuniones privadas, jornadas de formación y eventos médicos informativos, con la logística resuelta de punta a punta.</p></li>
+    <li class="servicio"><span class="num" aria-hidden="true">04</span><h3>Producción técnica y streaming</h3><p>Iluminación, audio, pantallas LED, cámaras y transmisión para eventos presenciales, híbridos y virtuales.</p></li>
+    <li class="servicio"><span class="num" aria-hidden="true">05</span><h3>Edición de video corporativo</h3><p>Edición de piezas institucionales, memorias de evento y contenido para redes a partir de tu material.</p></li>
+  </ol>
+</section>
+
+<section id="proyectos" class="proyectos" aria-labelledby="titulo-proyectos">
+  <div class="contenedor seccion">
+    <div class="cabeza">
+      <h2 id="titulo-proyectos">Proyectos recientes</h2>
+      <p>Una muestra de los últimos tres años. Por confidencialidad, no mostramos contenido de nuestros clientes.</p>
+    </div>
+    <div class="tarjetas">
+      <figure class="tarjeta">
+        <img src="/assets/img/barbados-salon-800.webp" srcset="/assets/img/barbados-salon-800.webp 800w, /assets/img/barbados-salon-1600.webp 1320w" sizes="(max-width: 760px) 100vw, 400px" width="800" height="600" alt="Salón montado con mantelería morada, sillas blancas y torre de iluminación en Barbados" loading="lazy">
+        <figcaption><span class="lugar">Barbados</span><h3>Lanzamiento de producto</h3></figcaption>
+      </figure>
+      <figure class="tarjeta">
+        <img src="/assets/img/barcelona-truss-800.webp" srcset="/assets/img/barcelona-truss-800.webp 600w, /assets/img/barcelona-truss-1600.webp 1200w" sizes="(max-width: 760px) 100vw, 400px" width="600" height="800" alt="Salón con mesas montadas y torre de truss con iluminación en Barcelona" loading="lazy">
+        <figcaption><span class="lugar">Barcelona · Berlín · Istanbul · San Antonio · Chicago</span><h3>Eventos satélite en congresos médicos</h3></figcaption>
+      </figure>
+      <figure class="tarjeta">
+        <img src="/assets/img/trinidad-centro-mesa-800.webp" srcset="/assets/img/trinidad-centro-mesa-800.webp 600w, /assets/img/trinidad-centro-mesa-1600.webp 1200w" sizes="(max-width: 760px) 100vw, 400px" width="600" height="800" alt="Centro de mesa con flores naranjas y platos de borde dorado en Trinidad y Tobago" loading="lazy">
+        <figcaption><span class="lugar">Trinidad y Tobago</span><h3>Lanzamiento de producto</h3></figcaption>
+      </figure>
+    </div>
+    <p class="nota">También: evento médico informativo en Lima, evento corporativo privado en Panamá y evento educativo en Santiago.</p>
+  </div>
+</section>
+
+<section class="contenedor marcas" aria-labelledby="titulo-marcas">
+  <h2 id="titulo-marcas" class="etiqueta">Marcas con las que hemos trabajado</h2>
+  <p class="lista">Novartis · Novo Nordisk · Roche · MSD · Sandoz · SENA · Cenipalma · P&amp;M · IAB · Santillana · Richmond · Loqueleo · Calazans</p>
+</section>
+
+<section id="metodo" class="contenedor metodo" aria-labelledby="titulo-metodo">
+  <div class="fotos">
+    <img src="/assets/img/santiago-escaleta-800.webp" srcset="/assets/img/santiago-escaleta-800.webp 450w, /assets/img/santiago-escaleta-1600.webp 900w" sizes="(max-width: 760px) 50vw, 300px" width="450" height="800" alt="Sala en ensayo con la escaleta del evento proyectada en una pantalla LED" loading="lazy">
+    <img src="/assets/img/sanantonio-consola-800.webp" srcset="/assets/img/sanantonio-consola-800.webp 800w, /assets/img/sanantonio-consola-1600.webp 1512w" sizes="(max-width: 760px) 50vw, 300px" width="800" height="458" alt="Consola de audio y cableado en el control técnico de un salón" loading="lazy">
+  </div>
+  <div class="texto">
+    <h2 id="titulo-metodo">Del guion de flow al último cue</h2>
+    <p>Cada proyecto lo dirige nuestro equipo central, con una red de proveedores locales en cada ciudad. Escaleta minuto a minuto, ensayos técnicos y una sola persona responsable de que todo salga.</p>
+    <p class="ciudades">Bogotá · Bridgetown · Port of Spain · Lima · Santiago · Ciudad de Panamá · Istanbul · Barcelona · Berlín · Chicago · San Antonio</p>
+  </div>
+</section>
+
+<section id="contacto" class="contacto" aria-labelledby="titulo-contacto">
+  <div class="contenedor">
+    <div class="intro">
+      <h2 id="titulo-contacto" style="font-size: clamp(36px, 4.5vw, 60px); line-height: 1.05;">Hablemos de tu próximo evento</h2>
+      <p>Cuéntanos qué tienes en mente. Respondemos en un día hábil.</p>
+    </div>
+    <div>
+      <form id="formulario-contacto" novalidate>
+        <label class="campo">Nombre<input type="text" name="name" autocomplete="name" required></label>
+        <label class="campo">Empresa<input type="text" name="company" autocomplete="organization"></label>
+        <label class="campo">Correo corporativo<input type="email" name="email" autocomplete="email" required></label>
+        <label class="campo">Tu proyecto (opcional)<textarea name="message" rows="3" placeholder="Tipo de evento, fechas, ciudad, número de asistentes"></textarea></label>
+        <label class="autorizacion"><input type="checkbox" name="autorizacion" value="Sí" required><span>Autorizo a Vértice Collective S.A.S. a tratar mis datos para responder esta solicitud, según la <a href="/politica-de-datos">Política de Tratamiento de Datos Personales</a>.</span></label>
+        <div class="trampa" aria-hidden="true"><label>No llenar<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label></div>
+        <button class="boton" type="submit">Enviar solicitud</button>
+        <p class="estado" role="status" aria-live="polite"></p>
+      </form>
+      <div id="gracias" class="gracias" tabindex="-1" hidden>
+        <h3>Gracias</h3>
+        <p>Recibimos tu solicitud. Te respondemos en un día hábil.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <div class="contenedor">
+    <span>Vértice Collective S.A.S. · NIT 902.073.176-2 · Bogotá, Colombia</span>
+    <nav aria-label="Legal"><a href="/politica-de-datos">Política de datos</a><a href="/terminos">Términos de uso</a></nav>
+  </div>
+</footer>
+
+<script src="/assets/js/formulario.js" defer></script>
 </body>
 </html>
