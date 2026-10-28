@@ -16,6 +16,6 @@ Bogotá, Bridgetown, Port of Spain, Lima, Santiago, Ciudad de Panamá, Istanbul,
 Novartis, Novo Nordisk, Roche, MSD, Sandoz, SENA, Cenipalma, P&M, IAB, Santillana, Richmond, Loqueleo, Calazans.
 
 ## Páginas
-- [Inicio (español)](https://verticecollective.co/)
-- [Home (English)](https://verticecollective.co/en/)
-- [Contacto](https://verticecollective.co/#contacto)
+- [Inicio (español)](https://www.verticecollective.co/)
+- [Home (English)](https://www.verticecollective.co/en/)
+- [Contacto](https://www.verticecollective.co/#contacto)

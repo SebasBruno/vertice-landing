@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://verticecollective.co/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://verticecollective.co/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://verticecollective.co/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://verticecollective.co/"/>
+    <loc>https://www.verticecollective.co/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.verticecollective.co/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.verticecollective.co/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.verticecollective.co/"/>
   </url>
   <url>
-    <loc>https://verticecollective.co/en/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://verticecollective.co/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://verticecollective.co/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://verticecollective.co/"/>
+    <loc>https://www.verticecollective.co/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.verticecollective.co/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.verticecollective.co/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.verticecollective.co/"/>
   </url>
-  <url><loc>https://verticecollective.co/politica-de-datos</loc></url>
-  <url><loc>https://verticecollective.co/terminos</loc></url>
+  <url><loc>https://www.verticecollective.co/politica-de-datos</loc></url>
+  <url><loc>https://www.verticecollective.co/terminos</loc></url>
 </urlset>
