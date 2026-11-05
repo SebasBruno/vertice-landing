@@ -105,6 +105,7 @@ form{display:flex;flex-direction:column;gap:18px}
 .campo textarea{resize:vertical;min-height:96px}
 .campo input:focus,.campo textarea:focus{border-color:var(--esmeralda);outline:none;box-shadow:0 0 0 3px rgba(27,107,69,.18)}
 .autorizacion{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--texto-2)}
+.autorizacion+.autorizacion{margin-top:-8px}
 .autorizacion input{width:20px;height:20px;margin:2px 0 0;flex:none;accent-color:var(--selva)}
 .trampa{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .estado{font-size:14px;min-height:1.6em}
@@ -126,6 +127,9 @@ form{display:flex;flex-direction:column;gap:18px}
 .legal p,.legal li{color:var(--texto-2)}
 .legal p+p{margin-top:12px}
 .legal ul{padding-left:20px}
+.legal .vigencia{font-size:14px;color:var(--texto-3)}
+.legal .nota-legal{background:var(--arena);padding:16px 20px;font-size:14px;margin:24px 0 0}
+.legal strong{color:var(--texto);font-weight:600}
 .legal .aviso{background:var(--arena);padding:16px 20px;font-size:14px;margin:24px 0}
 
 @media (max-width:640px){

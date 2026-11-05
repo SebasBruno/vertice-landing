@@ -25,7 +25,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="/assets/fonts/cormorant-garamond-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/site.css?v=5">
+<link rel="stylesheet" href="/assets/css/site.css?v=6">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -253,7 +253,8 @@
         <label class="campo">Empresa<input type="text" name="company" autocomplete="organization"></label>
         <label class="campo">Correo corporativo<input type="email" name="email" autocomplete="email" required></label>
         <label class="campo">Tu proyecto (opcional)<textarea name="message" rows="3" placeholder="Tipo de evento, fechas, ciudad, número de asistentes"></textarea></label>
-        <label class="autorizacion"><input type="checkbox" name="autorizacion" value="Sí" required><span>Autorizo a Vértice Collective S.A.S. a tratar mis datos para responder esta solicitud, según la <a href="/politica-de-datos">Política de Tratamiento de Datos Personales</a>.</span></label>
+        <label class="autorizacion"><input type="checkbox" name="acepta_terminos" value="Sí" required><span>Acepto los <a href="/terminos" target="_blank" rel="noopener">Términos y condiciones</a>.</span></label>
+        <label class="autorizacion"><input type="checkbox" name="autorizacion" value="Sí" required><span>Autorizo a Vértice Collective S.A.S. a tratar mis datos para responder esta solicitud, según su <a href="/politica-de-datos" target="_blank" rel="noopener">Política de privacidad</a>.</span></label>
         <div class="trampa" aria-hidden="true"><label>No llenar<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label></div>
         <button class="boton" type="submit">Enviar solicitud</button>
         <p class="estado" role="status" aria-live="polite"></p>
@@ -271,11 +272,11 @@
 <footer class="pie">
   <div class="contenedor">
     <span>Vértice Collective S.A.S. · NIT 902.073.176-2 · Bogotá, Colombia</span>
-    <nav aria-label="Legal"><a href="/politica-de-datos">Política de datos</a><a href="/terminos">Términos de uso</a></nav>
+    <nav aria-label="Legal"><a href="/terminos">Términos y condiciones</a><a href="/politica-de-datos">Política de privacidad</a><a href="/cookies">Cookies</a><a href="/reembolsos">Reembolsos</a></nav>
   </div>
 </footer>
 
-<script src="/assets/js/formulario.js?v=3" defer></script>
+<script src="/assets/js/formulario.js?v=4" defer></script>
 <script src="/assets/js/galeria.js?v=5" defer></script>
 </body>
 </html>
