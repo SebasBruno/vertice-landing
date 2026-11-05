@@ -3,7 +3,7 @@
   if (!form) return;
   var es = (document.documentElement.lang || 'es').indexOf('es') === 0;
   // Versión de los documentos legales vigentes (fecha de publicación). Actualizar al cambiarlos.
-  var VERSION_LEGAL = '2026-11-05';
+  var VERSION_LEGAL = '2026-11-04';
   var BASE = 'https://www.verticecollective.co';
   var t = es ? {
     correo: 'Escribe un correo válido.',
