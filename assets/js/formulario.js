@@ -6,16 +6,20 @@
   var VERSION_LEGAL = '2026-11-04';
   var BASE = 'https://www.verticecollective.co';
   var t = es ? {
+    nombre: 'Escribe tu nombre.',
     correo: 'Escribe un correo válido.',
-    terminos: 'Para enviarnos tu solicitud debes aceptar los Términos y condiciones.',
-    autoriza: 'Para enviarnos tu solicitud necesitamos tu autorización de tratamiento de datos.',
+    terminos: 'Debes aceptar los Términos y condiciones.',
+    autoriza: 'Necesitamos tu autorización de tratamiento de datos.',
+    resumen: 'Revisa los campos marcados.',
     enviando: 'Enviando...',
     error: 'No pudimos enviar tu solicitud. Intenta de nuevo en un momento.',
     asunto: 'Nueva solicitud desde verticecollective.co'
   } : {
+    nombre: 'Please enter your name.',
     correo: 'Please enter a valid email.',
-    terminos: 'Please accept the Terms and conditions to send your enquiry.',
-    autoriza: 'We need your consent to process your data to send your enquiry.',
+    terminos: 'Please accept the Terms and conditions.',
+    autoriza: 'We need your consent to process your data.',
+    resumen: 'Please check the highlighted fields.',
     enviando: 'Sending...',
     error: "We couldn't send your enquiry. Please try again in a moment.",
     asunto: 'New enquiry from verticecollective.co (EN)'
@@ -24,19 +28,33 @@
   var boton = form.querySelector('button[type="submit"]');
   var textoBoton = boton.textContent;
 
+  // Al corregir un campo se quita su error
+  ['name', 'email', 'acepta_terminos', 'autorizacion'].forEach(function (n) {
+    var campo = form.elements[n];
+    campo.addEventListener(campo.type === 'checkbox' ? 'change' : 'input', function () {
+      if (campo.getAttribute('aria-invalid') !== 'true') return;
+      var ok = campo.type === 'checkbox' ? campo.checked : campo.value.trim() !== '';
+      if (ok) { campo.removeAttribute('aria-invalid'); var c = document.getElementById('error-' + n); c.hidden = true; c.textContent = ''; }
+    });
+  });
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     estado.className = 'estado';
     estado.textContent = '';
-    var correo = form.elements.email.value.trim();
-    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(correo)) {
-      estado.className = 'estado error'; estado.textContent = t.correo; form.elements.email.focus(); return;
+    var errores = [];
+    function marcar(nombre, mensaje) {
+      var campo = form.elements[nombre];
+      var caja = document.getElementById('error-' + nombre);
+      if (mensaje) { campo.setAttribute('aria-invalid', 'true'); caja.textContent = mensaje; caja.hidden = false; errores.push(campo); }
+      else { campo.removeAttribute('aria-invalid'); caja.textContent = ''; caja.hidden = true; }
     }
-    if (!form.elements.acepta_terminos.checked) {
-      estado.className = 'estado error'; estado.textContent = t.terminos; form.elements.acepta_terminos.focus(); return;
-    }
-    if (!form.elements.autorizacion.checked) {
-      estado.className = 'estado error'; estado.textContent = t.autoriza; form.elements.autorizacion.focus(); return;
+    marcar('name', form.elements.name.value.trim() ? '' : t.nombre);
+    marcar('email', /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(form.elements.email.value.trim()) ? '' : t.correo);
+    marcar('acepta_terminos', form.elements.acepta_terminos.checked ? '' : t.terminos);
+    marcar('autorizacion', form.elements.autorizacion.checked ? '' : t.autoriza);
+    if (errores.length) {
+      estado.className = 'estado error'; estado.textContent = t.resumen; errores[0].focus(); return;
     }
     var datos = new FormData(form);
     datos.delete('acepta_terminos');
