@@ -25,7 +25,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="/assets/fonts/cormorant-garamond-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/site.css?v=6">
+<link rel="stylesheet" href="/assets/css/site.css?v=7">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -56,12 +56,13 @@
 
 <header class="encabezado">
   <div class="contenedor">
-    <a class="marca" href="/"><img src="/assets/img/logo-vertice-selva.png" alt="Vértice Collective" width="600" height="391"></a>
-    <nav class="nav" aria-label="Principal">
+    <a class="marca" href="/"><img src="/assets/img/logo-vertice-selva-sinlema.png" alt="Vértice Collective" width="600" height="356"></a>
+    <button type="button" class="menu-boton" aria-expanded="false" aria-controls="menu-principal">Menú</button>
+    <nav id="menu-principal" class="nav" aria-label="Principal">
       <a href="#servicios">Servicios</a>
       <a href="#proyectos">Proyectos</a>
       <a href="#metodo">Cómo trabajamos</a>
-      <a href="#contacto">Contacto</a>
+      <a class="nav-cta" href="#contacto">Contacto</a>
       <span class="idioma"><a href="/" aria-current="page" lang="es">ES</a> · <a href="/en/" lang="en" hreflang="en">EN</a></span>
     </nav>
   </div>
@@ -83,6 +84,28 @@
     <img src="/assets/img/istanbul-alfombra-1600.webp" srcset="/assets/img/istanbul-alfombra-800.webp 800w, /assets/img/istanbul-alfombra-1600.webp 1600w" sizes="(max-width: 980px) 100vw, 620px" width="1600" height="992" alt="Entrada a un salón de evento con alfombra roja y tótems de luz en Istanbul" fetchpriority="high">
     <figcaption>Evento satélite en congreso médico · Istanbul</figcaption>
   </figure>
+</section>
+
+<section class="contenedor marcas" aria-labelledby="titulo-marcas">
+  <h2 id="titulo-marcas" class="etiqueta">Marcas con las que hemos trabajado</h2>
+  <div class="esfera-marco">
+    <ul class="esfera" aria-labelledby="titulo-marcas" style="--n:13">
+      <li style="--i:0">Novartis</li>
+      <li style="--i:1">Novo Nordisk</li>
+      <li style="--i:2">Roche</li>
+      <li style="--i:3">MSD</li>
+      <li style="--i:4">Sandoz</li>
+      <li style="--i:5">SENA</li>
+      <li style="--i:6">Cenipalma</li>
+      <li style="--i:7">P&amp;M</li>
+      <li style="--i:8">IAB</li>
+      <li style="--i:9">Santillana</li>
+      <li style="--i:10">Richmond</li>
+      <li style="--i:11">Loqueleo</li>
+      <li style="--i:12">Calazans</li>
+    </ul>
+  </div>
+  <button type="button" class="pausa-marcas" aria-pressed="false" data-pausar="Pausar animación" data-reanudar="Reanudar animación">Pausar animación</button>
 </section>
 
 <section id="servicios" class="contenedor seccion servicios" aria-labelledby="titulo-servicios">
@@ -208,26 +231,6 @@
   </div>
 </section>
 
-<section class="contenedor marcas" aria-labelledby="titulo-marcas">
-  <h2 id="titulo-marcas" class="etiqueta">Marcas con las que hemos trabajado</h2>
-  <div class="esfera-marco">
-    <ul class="esfera" style="--n:13">
-      <li style="--i:0">Novartis</li>
-      <li style="--i:1">Novo Nordisk</li>
-      <li style="--i:2">Roche</li>
-      <li style="--i:3">MSD</li>
-      <li style="--i:4">Sandoz</li>
-      <li style="--i:5">SENA</li>
-      <li style="--i:6">Cenipalma</li>
-      <li style="--i:7">P&amp;M</li>
-      <li style="--i:8">IAB</li>
-      <li style="--i:9">Santillana</li>
-      <li style="--i:10">Richmond</li>
-      <li style="--i:11">Loqueleo</li>
-      <li style="--i:12">Calazans</li>
-    </ul>
-  </div>
-</section>
 
 <section id="metodo" class="contenedor metodo" aria-labelledby="titulo-metodo">
   <div class="fotos">
@@ -246,15 +249,26 @@
     <div class="intro">
       <h2 id="titulo-contacto" style="font-size: clamp(36px, 4.5vw, 60px); line-height: 1.05;">Hablemos de tu próximo evento</h2>
       <p>Cuéntanos qué tienes en mente. Respondemos en un día hábil.</p>
+      <h3 class="pasos-titulo">Qué pasa después</h3>
+      <ol class="pasos">
+        <li><span><strong>Te respondemos</strong> en un día hábil.</span></li>
+        <li><span><strong>Hablamos</strong> para entender fechas, ciudad, audiencia y alcance.</span></li>
+        <li><span><strong>Te enviamos una propuesta escrita</strong> con alcance, valor y tiempos.</span></li>
+      </ol>
+      <p class="directo">¿Prefieres escribir directo? <a href="mailto:contacto@verticecollective.co">contacto@verticecollective.co</a></p>
     </div>
     <div>
       <form id="formulario-contacto" novalidate>
-        <label class="campo">Nombre<input type="text" name="name" autocomplete="name" required></label>
+        <label class="campo">Nombre<input type="text" name="name" autocomplete="name" aria-describedby="error-name" required></label>
+        <span class="error-campo" id="error-name" hidden></span>
         <label class="campo">Empresa<input type="text" name="company" autocomplete="organization"></label>
-        <label class="campo">Correo corporativo<input type="email" name="email" autocomplete="email" required></label>
+        <label class="campo">Correo corporativo<input type="email" name="email" autocomplete="email" aria-describedby="error-email" required></label>
+        <span class="error-campo" id="error-email" hidden></span>
         <label class="campo">Tu proyecto (opcional)<textarea name="message" rows="3" placeholder="Tipo de evento, fechas, ciudad, número de asistentes"></textarea></label>
-        <label class="autorizacion"><input type="checkbox" name="acepta_terminos" value="Sí" required><span>Acepto los <a href="/terminos" target="_blank" rel="noopener">Términos y condiciones</a>.</span></label>
-        <label class="autorizacion"><input type="checkbox" name="autorizacion" value="Sí" required><span>Autorizo a Vértice Collective S.A.S. a tratar mis datos para responder esta solicitud, según su <a href="/politica-de-datos" target="_blank" rel="noopener">Política de privacidad</a>.</span></label>
+        <label class="autorizacion"><input type="checkbox" name="acepta_terminos" value="Sí" required aria-describedby="error-acepta_terminos"><span>Acepto los <a href="/terminos" target="_blank" rel="noopener">Términos y condiciones</a>.</span></label>
+        <span class="error-campo" id="error-acepta_terminos" hidden></span>
+        <label class="autorizacion"><input type="checkbox" name="autorizacion" value="Sí" required aria-describedby="error-autorizacion"><span>Autorizo a Vértice Collective S.A.S. a tratar mis datos para responder esta solicitud, según su <a href="/politica-de-datos" target="_blank" rel="noopener">Política de privacidad</a>.</span></label>
+        <span class="error-campo" id="error-autorizacion" hidden></span>
         <div class="trampa" aria-hidden="true"><label>No llenar<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label></div>
         <button class="boton" type="submit">Enviar solicitud</button>
         <p class="estado" role="status" aria-live="polite"></p>
@@ -276,7 +290,8 @@
   </div>
 </footer>
 
-<script src="/assets/js/formulario.js?v=4" defer></script>
-<script src="/assets/js/galeria.js?v=5" defer></script>
+<script src="/assets/js/formulario.js?v=5" defer></script>
+<script src="/assets/js/galeria.js?v=6" defer></script>
+<script src="/assets/js/menu.js?v=1" defer></script>
 </body>
 </html>

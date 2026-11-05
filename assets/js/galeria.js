@@ -2,7 +2,12 @@
   var reducir = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // Carruseles
-  document.querySelectorAll('[data-carrusel]').forEach(function (c) {
+  var esp = (document.documentElement.lang || 'es').indexOf('es') === 0;
+  document.querySelectorAll('[data-carrusel]').forEach(function (c, n) {
+    var titulo = c.querySelector('h3');
+    if (titulo) { titulo.id = titulo.id || 'carrusel-' + (n + 1); c.setAttribute('aria-labelledby', titulo.id); }
+    c.setAttribute('role', 'region');
+    c.setAttribute('aria-roledescription', esp ? 'carrusel' : 'carousel');
     var pista = c.querySelector('.pista');
     var diapos = Array.prototype.slice.call(pista.children);
     var ant = c.querySelector('[data-anterior]');
@@ -33,6 +38,18 @@
     window.addEventListener('resize', actualizar);
     actualizar();
   });
+
+  // Anillo de marcas: botón para pausar o reanudar
+  var pausa = document.querySelector('.pausa-marcas');
+  if (pausa) {
+    var marcas = pausa.closest('.marcas');
+    pausa.addEventListener('click', function () {
+      var pausado = pausa.getAttribute('aria-pressed') !== 'true';
+      pausa.setAttribute('aria-pressed', String(pausado));
+      pausa.textContent = pausado ? pausa.dataset.reanudar : pausa.dataset.pausar;
+      marcas.classList.toggle('pausado', pausado);
+    });
+  }
 
   // Videos: se reproducen solo cuando están a la vista
   var videos = document.querySelectorAll('.diapo video[loop]');
